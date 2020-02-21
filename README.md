@@ -1,2 +1,2 @@
-# node_movies
+# Flick
 A movie streaming website

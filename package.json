@@ -1,0 +1,27 @@
+{
+  "name": "flick",
+  "version": "1.0.0",
+  "description": "movie streaming website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AAA530/node_movies.git"
+  },
+  "keywords": [
+    "movies"
+  ],
+  "author": "AAA530",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AAA530/node_movies/issues"
+  },
+  "homepage": "https://github.com/AAA530/node_movies#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
