@@ -1,2 +1,2 @@
 # Flick
-A movie streaming website
+An E-commerce Website.
