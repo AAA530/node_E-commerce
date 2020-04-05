@@ -34,6 +34,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req,res,next)=>{
+    res.locals.currentUser = req.user;
+    next();
+})
 
 /////////////////// ROUTES
 
@@ -42,5 +46,5 @@ app.use(indexRoute);
 /////////////////// PORT
 
 app.listen(4000, function(){
-    console.log("Servr has starte at PORT 4000");
+    console.log("Server has started at PORT 4000");
 });
