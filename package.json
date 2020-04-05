@@ -1,27 +1,21 @@
 {
   "name": "flick",
   "version": "1.0.0",
-  "description": "movie streaming website",
+  "description": "An E-Commerce Website",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AAA530/node_movies.git"
-  },
-  "keywords": [
-    "movies"
-  ],
-  "author": "AAA530",
+  "author": "Vikas,Dhairya and Sanjeev",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AAA530/node_movies/issues"
-  },
-  "homepage": "https://github.com/AAA530/node_movies#readme",
   "dependencies": {
-    "ejs": "^3.0.1",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "express-session": "^1.17.0",
+    "mongoose": "^5.9.7",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1"
   }
 }
