@@ -5,7 +5,7 @@ var express                = require('express'),
     LocalStrategy          = require('passport-local'),
     passportLocalMongoose  = require('passport-local-mongoose'),
     session                = require('express-session'),
-    User                   = require('./modues/users');
+    User                   = require('./models/users');
 
 var indexRoute             = require('./routes/index');    
 
