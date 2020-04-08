@@ -20,18 +20,23 @@
       <ul class="nav"> 
         <% if (currentUser) { %>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logged in as <%= currentUser.username %> </a>
+          <a class="nav-link" href="#"  style="color: white;">Hello. <%= currentUser.username %> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shopping-cart"  style="color: white;">Cart
+          <span class="badge"><%= session.cart.totalQty %></span>
+          </a>
         </li>
         <% } %> 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="color: white;">
             Your Profile
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <% if (!currentUser) { %>
-            <a class="dropdown-item" href="/register">Signin</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown"  style="color: white;">
+          <% if(!currentUser) { %>  
+            <a class="dropdown-item" href="/register">Signup</a>
             <a class="dropdown-item" href="/login">Login</a>
-          <% }else{ %>
+          <%} else { %>
             <a class="dropdown-item" href="#">Option 1</a>
             <a class="dropdown-item" href="#">Option 2</a>
             <div class="dropdown-divider"></div>
