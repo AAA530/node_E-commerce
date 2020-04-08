@@ -8,6 +8,8 @@ var UserSchema = new mongoose.Schema({
     password: String
 });
 UserSchema.plugin(passportLocalMongoose);
+
+
 var User = mongoose.model("User", UserSchema);
 
 module.exports = User;

@@ -1,19 +1,82 @@
 var express        = require('express'),
-   router          = express.Router({mergeParams:true});
-   passport        = require('passport');
-   User            = require("../modues/users")
+   router          = express.Router({mergeParams:true}),
+   passport        = require('passport'),
+   User            = require("../models/users")
+   Product         = require("../models/product"),
+   Cart            = require("../models/cart")
  
 router.get('/', function(req,res){
     res.render("home");
 });
 
+productArr = [
+    {
+        image:"https://picsum.photos/id/237/200/300",
+        name:"KUTTA",
+        description:"ye ek kaala kutta h!!!",
+    },
+    {
+        image:"https://picsum.photos/seed/picsum/200/300",
+        name:"pahad",
+        description:"ye ek kaala kutta h!!!",
+    },
+    {
+        image:"https://picsum.photos/200/300?grayscale",
+        name:"werr",
+        description:"ye ek kaala kutta h!!!",
+    },
+    {
+        image:"https://picsum.photos/200/300/?blur",
+        name:"ijwe",
+        description:"ye ek kaala kutta h!!!",
+    },
+    {
+        image:"https://picsum.photos/id/870/200/300?grayscale&blur=2",
+        name:"xcjs",
+        description:"ye ek kaala kutta h!!!",
+    },
+    {
+        image:"https://picsum.photos/id/237/200/300",
+        name:"loki",
+        description:"ye ek kaala kutta h!!!",
+    },
+    {
+        image:"https://picsum.photos/200/300/?blur",
+        name:"loki",
+        description:"ye ek kaala kutta h!!!",
+    },
+    {
+        image:"https://picsum.photos/id/237/200/300",
+        name:"loki",
+        description:"ye ek kaala kutta h!!!",
+    }
+
+];
+
+// Product.create(productArr, function(err,product){
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log(product)
+//     };
+// });
+
+
 router.get('/flick', isLoggedIn, function(req,res){
-    res.render("flick");
+    Product.find({}, function(err, products){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("flick", {products: products});
+        }
+    });
+
 });
 
 /////////////////// REGISTER
 
 router.get('/register', function(req,res){
+    
     res.render("register");
 });
 
@@ -25,9 +88,10 @@ router.post('/register', function(req,res){
             console.log(err);
             return res.render("register");
         }
-        passport.authenticate("local")(req,res,function(){
+         passport.authenticate("local")(req,res,function(){
             res.redirect("/flick");
         });
+        
     });
 });
 
