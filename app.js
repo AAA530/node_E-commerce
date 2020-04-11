@@ -8,13 +8,14 @@ var express                = require('express'),
     mongoStore             = require("connect-mongo")(session),
     User                   = require('./models/users'),
     indexRoute             = require('./routes/index'),
-    productRoute           = require('./routes/product')   
+    productRoute           = require('./routes/product'),
+    sellerRoute            = require('./routes/seller')
+
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);    
-
+mongoose.set('useUnifiedTopology', true);
 mongoose.connect("mongodb://localhost/e_commerce");
 
 var app = express();
@@ -46,7 +47,8 @@ app.use((req,res,next)=>{
 /////////////////// ROUTES
 
 app.use('/', indexRoute);
-app.use('/', productRoute); 
+app.use('/', productRoute);
+app.use('/', sellerRoute); 
 
 /////////////////// PORT
 

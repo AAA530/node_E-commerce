@@ -1,0 +1,47 @@
+<%- include('layouts/header'); %>
+<%- include('layouts/navbar'); %>
+
+<div class="container col-md-5 bg-light" style="margin-top: 100px;padding: 10px;border-radius: 10px;">
+    <h1 class="text-center">Login to Seller Account</h1>
+    <form action="/login" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input class="form-control" type="text" placeholder="Username" name="username">
+        </div>
+        <div class="form-group">
+            <label for="username">Password</label>
+            <input class="form-control" type="password" placeholder="Password" name="password">
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Login</button>
+    </form>
+    <p class="notice">By continuing, you agree to Flick's terms of use and <a href="#">Privacy Policy</a></p>
+    <p><a href="#">Forgot Password</a></p>
+
+    <div class="text-center">
+        New to Flick?<br>
+        <a href="/seller/register" class="btn btn-primary">Create your Flick Seller account</a>
+     </div>
+ </div>
+ 
+
+<%- include('layouts/footer'); %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
